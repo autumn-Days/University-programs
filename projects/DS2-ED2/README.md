@@ -14,17 +14,31 @@ Here I implemented a set datastructure using an AVL tree with C++. It permits yo
 
 #### 2.1 Usage
 
+Here are the CRUD functionalities:
+
 ```cpp
-//insertion
+//creation and insertion
+Set<string>* mySet = new Set<string>();
 mySet->insert("Carl");
 mySet->insert("Mary");
-mySet->insert("Lucke");
+mySet->insert("Lucky");
 //read
 inOrder(mySet->root);
+//update
+mySet->update("Lucky", "Lucke")
 //deletion
 mySet->erase("Carl");
 mySet->erase("Lucke");
-//
 ```
+for the set functionalities, suppose you have a `set1` and `set2` and they are equal, respectively, to : $\{Ane, Mary, Joseph\}$ and $\{Emanuel, Mary, John\}$.
+
+```cpp
+set1->intersection(set1,set2); //Mary
+set1->difference(set1,set2); //empty
+set1->union2(set1,set2); //Emanuel, Mary and John
+```
+
+It's a bit funny, but, since "union" was already a keyword in C++, I needed to use another name for the "union" operation😅.
+
 
 [1]: Actually the name of the subject was advanced data structures, but the name of the repository wouldn't be that cool if I had adopt the actual name.
