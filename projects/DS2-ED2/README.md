@@ -85,5 +85,12 @@ For choosing the datastructure, use the following mnemonics:
 3. hashOpen: Hash table with open adressing
 4. hashExt: Hash table with separate chaining
 
+For example, to execute the program using the `Pollyana` (which is already given) you can run it by using the following commands:
+
+```
+1. g++ -std=c++17 main.cpp -o freq -licuuc -licui18n
+2. ./freq hashOpen pollyanaExample.txt
+```
+
 ___
 [1]: Actually the name of the subject was advanced data structures, but the name of the repository wouldn't be that cool if I had adopt the actual name.
