@@ -1,10 +1,10 @@
 ## 1. Purpose
 
-This repository contains the two projects that I did for the discipline of "Data structures 2"$^1$.
+This repository contains the two projects that I did for the discipline of "Data structures 2"$^{1}$.
 
-## 2. Structure
+## 2. Structures
 
-### 2. Set data structure
+### 2.1 Set data structure
 
 Here I implemented a set datastructure using an AVL tree with C++. It permits you to make all the _CRUD_ operations, beyond the set operations, which are:
 
@@ -12,7 +12,7 @@ Here I implemented a set datastructure using an AVL tree with C++. It permits yo
 2. Intersection: $\{1,2,3\} \bigcap \{3,4,5\}= \{3\}$ 
 3. Difference: $\{1,2,3\} - \{3,4,5\}= \{1,2\}$
 
-#### 2.1 Usage
+#### 2.1.1 Usage
 
 Here are the CRUD functionalities:
 
@@ -39,6 +39,43 @@ set1->union2(set1,set2); //Emanuel, Mary and John
 ```
 
 It's a bit funny, but, since "union" was already a keyword in C++, I needed to use another name for the "union" operation😅.
+
+#### 2.1.2 Compilation
+
+In order to test the set data structure I created a menu that enables the user to test all the main functionalities. To compile it, everything that needs to be done is run the command `g++ main.cpp` in the same directory of the project.
+
+If you are using linux or mac, to run the code after compilation just make `./a.out`, if you in windows, use `./a.exe`
+
+### 2.2 Word frequency counter
+
+The main purpose of this project was to empirically compare the performance of dictionaries implemented with different 4 data structures by using the metric of number of comparitions of keys needed to create a table of the frequency of the first 1024 words of a given book and the time spent to do so. For example, if the whole book consisted in just "cats are fun. I love cats" the output would be:
+
+```txt
+are 1
+cats 2
+fun 1
+i 1
+love 1
+```
+
+The datastructures used were:
+
+1. AVL tree
+2. Red-black tree
+3. Hash table with open adressing
+4. Hash table with separate chaining
+
+### 2.2.2 Compilation and execution
+
+To compile the program, you just need to run `g++ main.cpp` and, since this is a `CLI` program, you will have to use it just like if you were using some comamand in the terminal. The syntax is:
+
+```
+<executable name> <data structure choosed> <book name>.txt
+```
+
+For choosing the datastructure, use the following mnemonics:
+
+```
 
 
 [1]: Actually the name of the subject was advanced data structures, but the name of the repository wouldn't be that cool if I had adopt the actual name.
