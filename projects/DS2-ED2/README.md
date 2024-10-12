@@ -95,4 +95,5 @@ For example, to execute the program using the `Pollyana`$^{2}$ (which is already
 T
 ___
 [1]: Actually the name of the subject was advanced data structures, but the name of the repository wouldn't be that cool if I had adopt the actual name.
+
 [2]: Although I mentioned the `Pollyana` book, all the examples in the `examples` directory are in relation to the book _Memórias Póstumas de Bras Cubas_, a book from the famous brazilian writter _Machado de Assis_.
