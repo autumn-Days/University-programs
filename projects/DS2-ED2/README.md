@@ -65,9 +65,14 @@ The datastructures used were:
 3. Hash table with open adressing
 4. Hash table with separate chaining
 
-### 2.2.2 Compilation and execution
+#### 2.2.2 Dependencies
 
-To compile the program, you just need to run `g++ main.cpp` and, since this is a `CLI` program, you will have to use it just like if you were using some comamand in the terminal. The syntax is:
+For treating special characters from other languages, such as russian, mandarin or portuguese, it was used the `icu` library. For this reason it must be installed system wide before using the program. Also, the program must be compiled using `g++` version 17 or superior.
+
+### 2.2.3 Compilation and execution
+
+To compile the program, you just need to run `g++ -std=c++17 main.cpp
+-o <executable's name> -licuuc -licui18n` and, since this is a `CLI` program, you will have to use it just like if you were using some comamand in the terminal. The syntax is:
 
 ```
 <executable name> <data structure choosed> <book name>.txt
@@ -75,7 +80,10 @@ To compile the program, you just need to run `g++ main.cpp` and, since this is a
 
 For choosing the datastructure, use the following mnemonics:
 
-```
+1. AVL: AVL tree
+2. RB: Red-black tree
+3. hashOpen: Hash table with open adressing
+4. hashExt: Hash table with separate chaining
 
-
+___
 [1]: Actually the name of the subject was advanced data structures, but the name of the repository wouldn't be that cool if I had adopt the actual name.
