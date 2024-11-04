@@ -11,11 +11,28 @@ def getIp():
     and it is pretty important to portability.
     """
     return socket.gethostbyname(socket.gethostname())
+
 def getGate():
     return socket.gethostbyname(socket.)
 
+def handleClient():
+    """
+    The objective of this function is to handle each client that
+    tries to connect to the server. That is, it will basically
+    start a new thread
+    """
+
+
 def main():
-    serverSocket = socket.socket((getIp(),))
+    PORT = 5050
+    server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server.bind(getIp(), PORT)
+
+    server.listen()
+
+    with server:
+        clientSocket, clientInfo = server.connect()
+        myThread = threading.thread(target=handleClient, args=(clientSocket, clientInfo))
 
 if __name__ == "__main__":
     main()
