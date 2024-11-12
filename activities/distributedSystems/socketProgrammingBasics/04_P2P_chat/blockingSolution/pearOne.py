@@ -16,12 +16,16 @@ def main():
     while True:
 
         msgRcv = (clientSocket.recv(1024)).decode("utf-8")
-        print(msgRcv)
+        print("Other:", msgRcv)
 
         if msgRcv == DISCONNET_MSG:
             break
         
-        msgSend = clientSocket.sendall((input("")).encode())
+        msgSend = input("You: ")
+        clientSocket.sendall(msgSend.encode())
+
+        if msgSend == DISCONNET_MSG:
+            break
 
     server.close()
 
