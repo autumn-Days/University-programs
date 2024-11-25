@@ -7,7 +7,7 @@ class TCPServer:
     def __init__(self):
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.listInfo: List[Tuple[str, socket.socket]] = []
-        self.server.bind(("127.0.0.1", 5054))
+        self.server.bind(("127.0.0.1", 5055))
         self.server.listen(100)
         self.lock = threading.Lock()
         print(f"The server has been initiated at 127.0.0.1/5051")
@@ -49,8 +49,6 @@ class TCPServer:
     #=begin OKAY =end
     def __handleSend(self):
         while True:
-            if len(self.listInfo == 0):
-                break
             with self.lock:
                 for info in self.listInfo:
                     try:

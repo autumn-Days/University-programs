@@ -4,21 +4,27 @@ from collections import deque
 class Entity:
     def __init__(self, name):
         self.name = name
-        self.relationShips: List[Tuple[str, 'Entity']] = []
+        self.relationShips: Dict[str, 'Entity']= {}
+
     def addRelation(self, relation:Tuple[str, 'Entity']):
-        self.relationShips.append(relation)
+        try :
+            self.relationShips[relation[0]].append(relation[1])
+        except KeyError:
+            self.relationShips[relation[0]] = [relation[1]]
+
     def BFS(self):
         entities = deque()
         entities.append(self)
-        
+        currentRelations = None
+
         while entities :
             currentEntity = entities.popleft()
-            relationShips = deque(currentEntity.relationShips)
-            while relationShips :
-                relation = relationShips.popleft()
-                print(f"{currentEntity.name} {relation[0]} {relation[1].name}")                
-                if ((relation[1] not in entities) and (len(relation[1].relationShips) != 0)):
-                    entities.append(relation[1])
+            currentRelations = currentEntity.relationShips
+            for relation,otherEntities in currentRelations.items():
+                for otherEntity in otherEntities :
+                    print(f"{currentEntity.name} {relation} {otherEntity.name}")                
+                    if ((otherEntity not in entities) and (len(otherEntity.relationShips) != 0)):
+                        entities.append(otherEntity)
 
 
 def main():

@@ -3,7 +3,7 @@ import socket
 class TCPClient():
     def __init__(self):
         self.client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.client.connect(("127.0.0.1", 5054))
+        self.client.connect(("127.0.0.1", 5055))
     def sendRequest(self,request:str):
         self.client.sendall(request.encode())
     def getResponse(self):
