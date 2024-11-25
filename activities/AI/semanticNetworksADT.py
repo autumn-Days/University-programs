@@ -39,8 +39,10 @@ def main():
     queijo = Entity("queijo")
     gato = Entity("gato")
     cachorro = Entity("cachorro")
+    homem = Entity("homem")
 
     Bob.addRelation(("é um", construtor))
+    Bob.addRelation(("é um", homem))
     Bob.addRelation(("possui", fido))
     Bob.addRelation(("come", queijo))
 
