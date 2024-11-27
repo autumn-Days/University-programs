@@ -22,9 +22,24 @@ class Entity:
             currentRelations = currentEntity.relationShips
             for relation,otherEntities in currentRelations.items():
                 for otherEntity in otherEntities :
-                    print(f"{currentEntity.name} {relation} {otherEntity.name}")                
-                    if ((otherEntity not in entities) and (len(otherEntity.relationShips) != 0)):
-                        entities.append(otherEntity)
+                    if relation == "subclass":
+                        pass
+                    else:
+                        print(f"{currentEntity.name} {relation} {otherEntity.name}")                
+                        if ((otherEntity not in entities) and (len(otherEntity.relationShips) != 0)):
+                            entities.append(otherEntity)
+
+    #private
+
+    def __getFeaturesSuperClass(self):
+        for superclass in self.relationShips['subclass']:
+            for relation, entities in superclass.relationShips.items():
+                for entity in entities:
+                    if relation == "subclass":
+                        entity.__getFeaturesSuperClass()
+                    else:
+                        print(f"{relation} {entity.name}")
+
 
 
 def main():
@@ -41,15 +56,15 @@ def main():
     cachorro = Entity("cachorro")
     homem = Entity("homem")
 
-    Bob.addRelation(("é um", construtor))
-    Bob.addRelation(("é um", homem))
+    Bob.addRelation(("subclass", construtor))
+    Bob.addRelation(("subclass", homem))
     Bob.addRelation(("possui", fido))
     Bob.addRelation(("come", queijo))
 
-    fido.addRelation(("é um", cachorro))
+    fido.addRelation(("subclass", cachorro))
     fido.addRelation(("caça", fang))
 
-    fang.addRelation(("é um", gato))
+    fang.addRelation(("subclass", gato))
     fang.addRelation(("caça", ratos))
 
     ratos.addRelation(("comem", queijo))
