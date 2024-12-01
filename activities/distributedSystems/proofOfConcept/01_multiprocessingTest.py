@@ -13,7 +13,7 @@ from threading import Thread
 from time import *
 from random import *
 
-def sleeper(name:str) -> None:
+def sleeper(name:str) -> bool:
     startTime = gmtime()
     sleepTime = randint(1,10)
     print(f"{startTime.tm_min}:{startTime.tm_sec} - The process {name} is going to sleep for {sleepTime}")
