@@ -1,1 +1,1 @@
-This was my final project for the "data bases fundamentals", which I completed during the second semester of 2023. It has a graphical user interface that uses Jupyter notebook for creating, reading, deleting and updating information in the data base.
+This was my final project for the "data bases fundamentals" subject, which I completed during the second semester of 2023. It has a graphical user interface that uses Jupyter notebook for creating, reading, deleting and updating information in the data base.
