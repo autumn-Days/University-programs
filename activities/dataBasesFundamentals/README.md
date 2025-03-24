@@ -1,0 +1,1 @@
+Here are most of the activities I did for the "data bases fundamentals" during the 2023.2 semester. All of them were taken from the "beecrowd" site - which have lots of exercises on different topics, SQL between they. 
