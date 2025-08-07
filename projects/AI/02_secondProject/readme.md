@@ -1,0 +1,1 @@
+This project consists on the development of genetic algorithms for solving the QAP problem, that is, the "Quadratic Allocation Problem", which is NP-hard. I did this project in my 6th period of Computer Science. It can be found on its original repository: https://github.com/autumn-Days/segundoProjetoIA 
